@@ -32,20 +32,20 @@ public class Main {
 		
 		// 2—2.1 做判断   2-2.2 判断语句
 		// 如果投入的钱是五元，它还是会出票，所以我们要让程序做判断，如果投入的钱不够票面金额，则不能出票。
-		Scanner in = new Scanner(System.in);
-		System.out.println("请投币：");
-		int amount  = in.nextInt();
-		if (amount >= 10) {
-			System.out.println("**************");
-			System.out.println("Java城际铁路专线");
-			System.out.println("*  无指定座位票  *");
-			System.out.println("  票价：10元  ");
-			System.out.println("**************");
-// 计算并打印找零
-			System.out.println("找零：" + (amount - 10));
-		} else {
-			System.out.println("您投入的钱不够支付票价，您还需要投入：" + (10 - amount) + "元");
-		}
+//		Scanner in = new Scanner(System.in);
+//		System.out.println("请投币：");
+//		int amount  = in.nextInt();
+//		if (amount >= 10) {
+//			System.out.println("**************");
+//			System.out.println("Java城际铁路专线");
+//			System.out.println("*  无指定座位票  *");
+//			System.out.println("  票价：10元  ");
+//			System.out.println("**************");
+//// 计算并打印找零
+//			System.out.println("找零：" + (amount - 10));
+//		} else {
+//			System.out.println("您投入的钱不够支付票价，您还需要投入：" + (10 - amount) + "元");
+//		}
 		
 		
 		// 2-2.3 嵌套和级联的判断
@@ -63,6 +63,36 @@ public class Main {
 //		}
 //		System.out.println(f);      // 这种叫做单一出口，以后要改变f的输出的话，只在一条语句中进行相应的修改就可以了。
 		
+		
+		// 2-2.4 判断语句常见问题
+		// 常见错误：是否等于应该使用用两个等号 == 判断 而不是一个＝
+		// 不过还好JAVA编译器会自动给你错误提示
+		// 代码有大致有三种风格，分隔开对于使用快速注释比较有效率，不会误伤。
+		
+		
+		// 2-2.5 多路分支
+		// 对级联if-else语句的优化
+		// 可以使用 switch-case 语句，  下面有例子
+//		Scanner in = new Scanner(System.in);
+//		int type = in.nextInt();
+//		switch (type) {
+//		case 1:
+//			System.out.println("123");
+//			break;
+//		case 2:
+//			System.out.println("456");
+//			break;
+//		case 3:
+//			System.out.println("789");
+//			break;
+//		case 4:
+//			System.out.println("10");
+//			break;
+//		default:
+//			System.out.println("dsdsd");
+//		}
+		
+		// 要特别注意一点，在 switch-case语句中 break 很重要，要用好它！
 		
 	}
 

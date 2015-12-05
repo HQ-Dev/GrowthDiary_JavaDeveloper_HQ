@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+// 初始化
+//		Scanner in = new Scanner(System.in);
+//// 读入投币金额
+//		System.out.print("请投币");
+//		int amount = in.nextInt();
+//// 打印车票
+//		System.out.println("**************");
+//		System.out.println("Java城际铁路专线");
+//		System.out.println("*  无指定座位票  *");
+//		System.out.println("  票价：10元  ");
+//		System.out.println("**************");
+//// 计算并打印找零
+//		System.out.println("找零：" + (amount - 10));
+		
+		// 如果投入的钱是五元，它还是会出票，所以我们要让程序做判断，如果投入的钱不够票面金额，则不能出票。
+		Scanner in = new Scanner(System.in);
+		System.out.println("请投币：");
+		int amount  = in.nextInt();
+		if (amount >= 10) {
+			System.out.println("**************");
+			System.out.println("Java城际铁路专线");
+			System.out.println("*  无指定座位票  *");
+			System.out.println("  票价：10元  ");
+			System.out.println("**************");
+// 计算并打印找零
+			System.out.println("找零：" + (amount - 10));
+		} else {
+			System.out.println("您投入的钱不够支付票价，您还需要投入：" + (10 - amount) + "元");
+		}
+	}
+
+}

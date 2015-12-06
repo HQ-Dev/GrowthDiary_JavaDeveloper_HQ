@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// 3-1.1 循环
+		// 完成一个无限循环的买票系统
+		Scanner in = new Scanner(System.in);
+		// 定义一个机器余额
+		int balance = 0;
+		while (true)       // 注意这个写法，是无限循环
+		{
+			System.out.println("请投币：");
+			int amount = in.nextInt();
+			balance = balance + amount;
+			if (balance >= 10)
+			{
+				System.out.println("******************");
+				System.out.println("**Java城际铁路专线**");
+				System.out.println("**   无指定座票   **");
+				System.out.println("**    票价十元    **");
+				System.out.println("******************");
+				// 计算找零
+				System.out.print("找零：" + (balance - 10) + "元\n");
+				balance = 0;
+			} 
+			else
+			{
+				System.out.println("您还需要投币：" + (10 - balance) + "元");
+			}
+
+		}
+	}
+
+}

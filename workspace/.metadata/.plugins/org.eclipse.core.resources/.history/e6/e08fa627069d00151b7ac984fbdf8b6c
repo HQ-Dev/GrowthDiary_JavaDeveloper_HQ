@@ -244,38 +244,20 @@ public class Main {
 		// 3.再次重复上面的步骤，如果a%b＝0，则现在b就是最大公约数，
 		// 但是，根据碾相除法，b要赋予a，而b要等于0，所以最大公约数则是a。如果不能整除，重复
 		// 看文字也许不能理解，找两个合适的数，进行演算，就很容易可以明白了。
-//		Scanner in = new Scanner(System.in);
-//		int a = in.nextInt();
-//		int b = in.nextInt();
-//		int gcd = 1;
-//		while (b != 0)
-//		{
-//			int r = a % b;
-//			a = b;
-//			b = r;
-//		}
-//		System.out.println(a);  // 但是经过计算之后，原来的a,b都丢失了，所以我们应该在
-//								// 开头添加代码来记录a和b
-//								// int oa = a; int ob = b; (oa就是original a意思)
-		
-		
-		// 期中练习
-//		int i = 6;
-//		do
-//		{
-//			System.out.println(i--);
-//		} while(false);        // 永不运行
-		
-		int j = 4;
-		for (int i=j;i<=j*2;i++)
+		Scanner in = new Scanner(System.in);
+		int a = in.nextInt();
+		int b = in.nextInt();
+		int gcd = 1;
+		while (b != 0)
 		{
-			switch(i/j)
-			{
-			case 0:
-			case 1:System.out.println("#");break;
-			case 2:System.out.println("*");
-			}
+			int r = a % b;
+			a = b;
+			b = r;
 		}
+		System.out.println(a);
+		
+		
+		
 		
 		
 		

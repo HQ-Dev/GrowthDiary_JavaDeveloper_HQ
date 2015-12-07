@@ -258,24 +258,13 @@ public class Main {
 //								// 开头添加代码来记录a和b
 //								// int oa = a; int ob = b; (oa就是original a意思)
 		
-		
-		// 期中练习
-//		int i = 6;
-//		do
-//		{
-//			System.out.println(i--);
-//		} while(false);        // 永不运行
-		
-		int j = 4;
-		for (int i=j;i<=j*2;i++)
+		int i = 6;
+		do
 		{
-			switch(i/j)
-			{
-			case 0:
-			case 1:System.out.println("#");break;
-			case 2:System.out.println("*");
-			}
-		}
+			System.out.println(i--);
+		} while(false);
+		
+		
 		
 		
 		

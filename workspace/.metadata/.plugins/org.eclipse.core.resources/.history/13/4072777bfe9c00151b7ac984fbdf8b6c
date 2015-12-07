@@ -204,78 +204,22 @@ public class Main {
 		// 接下来，将题目改动一下
 		// 求 f(n) = 1 - 1/2 + 1/3 - 1/4 + ... + 1/n
 		// 第一个思路是，我们有一个变量来表达符号，一轮是负号，一轮是正号
-//		Scanner in = new Scanner(System.in);
-//		int n = in.nextInt();
-//		double sum = 0.0;
-//		int sign = 1;
-//		for (int i=1; i<n;i++)
-//		{
-//			sum += sign*1.0/i;
-//			sign = -sign;       // 非常重要的一点，可以将这条语句放到上面去！如下：
-//		}                       // for(int i=1; i<n; i++, sign = -sign) { }
-//		System.out.println(sum);
-		
-		// 另一个思路，就是 if-else判定负号位置的奇偶来决定正负号
-		
-		
-		
-		// 4-3.2 最大公约数
-		// 输入两个数a和b，输出它们的最大公约数
-		// 输入： 12 18
-		// 输出：6
-		// 第一个办法，就是循环一定范围内的数字，去整除12和18，取最大能整除的那个数字
-		// 最大公约数英文缩写是 gcd
-//		Scanner in = new Scanner(System.in);
-//		int a = in.nextInt();
-//		int b = in.nextInt();
-//		int gcd = 1;
-//		for (int i=1; i<=a && i <= b ;i++) 
-//		{
-//			if (a % i == 0 && b % i == 0)
-//			{
-//				gcd = i;
-//			}
-//		}
-//		System.out.println(gcd);
-		
-		// 上面的方法使用了枚举，下面我们使用更聪明的碾转相除法（又叫做欧几里德法）进行解决
-		// 1.如果在a&b两个数字中，b是0，则a就是最大公约数
-		// 2.否则，计算a%b,计算后，让a＝b，b = 余数
-		// 3.再次重复上面的步骤，如果a%b＝0，则现在b就是最大公约数，
-		// 但是，根据碾相除法，b要赋予a，而b要等于0，所以最大公约数则是a。如果不能整除，重复
-		// 看文字也许不能理解，找两个合适的数，进行演算，就很容易可以明白了。
-//		Scanner in = new Scanner(System.in);
-//		int a = in.nextInt();
-//		int b = in.nextInt();
-//		int gcd = 1;
-//		while (b != 0)
-//		{
-//			int r = a % b;
-//			a = b;
-//			b = r;
-//		}
-//		System.out.println(a);  // 但是经过计算之后，原来的a,b都丢失了，所以我们应该在
-//								// 开头添加代码来记录a和b
-//								// int oa = a; int ob = b; (oa就是original a意思)
-		
-		
-		// 期中练习
-//		int i = 6;
-//		do
-//		{
-//			System.out.println(i--);
-//		} while(false);        // 永不运行
-		
-		int j = 4;
-		for (int i=j;i<=j*2;i++)
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		double sum = 0.0;
+		int sign = 1;
+		for (int i=1; i<n;i++)
 		{
-			switch(i/j)
-			{
-			case 0:
-			case 1:System.out.println("#");break;
-			case 2:System.out.println("*");
-			}
+			sum += sign*1.0/i;
+			sign = -sign;
 		}
+		System.out.println(sum);
+		
+		
+		
+		
+		
+		
 		
 		
 		

@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// 5-1 数组
+		// 如何写出一个程序计算用户输入的数字的平均数，并输出所有大于平均数的数字？
+		// 那就需要记录所有输入进来的数字，那用上面办法呢？
+		// 其实现在我们要接触新的东西，就是：数组！
+		
+		Scanner in = new Scanner(System.in);
+		int x;      // x 表示输入的数字
+		int [] numbers = new int[100];     // 定义了一个数组numbers，它数组数量是100,类型是int
+		double sum = 0;      // 定义了所有数字的和
+		int cnt = 0;         // 这个变量记录输入了多少个数字
+		x = in.nextInt();
+		while ( x != -1)            // 当输入－1的时候，表示告诉程序我停止输入数字了（“前面输入的数字已经够了”）
+		{
+			numbers[cnt] = x;       // cnt刚开始是0
+			sum += x;
+			cnt ++;
+			x = in.nextInt();
+		}
+		if (cnt > 0)
+		{
+			double average = sum/cnt;
+			System.out.println(average);
+			for (int i = 0; i<cnt; i++)
+			{
+				if (numbers[i] > average)
+				{
+					System.out.println(numbers[i]);
+				}
+			}
+		}
+		
+	}
+
+}

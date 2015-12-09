@@ -270,136 +270,30 @@ public class Main {
 		 * 4.令x++，如果x<n，重复3，否则结束
 		 * 示例如下：
 		 */
-//		Scanner in = new Scanner(System.in);
-//		boolean[] isPrime = new boolean[100];   // 这个意思是观察100以内的数字那些是素数。因为java会对为初始化的数组都赋予0，这不符合我们要给数组中每个数据都是true的规定，所以我们要先做以下操作
-//		for (int i = 0; i < isPrime.length; i++)
-//		{
-//			isPrime[i] = true;
-//		}
-//		for (int i = 2; i < isPrime.length; i++)
-//		{
-//			if ( isPrime[i])     // 如果这个数是素数，则做一个遍历,它的2倍3倍4倍都标记为非素数素数
-//			{
-//				for (int k = 2; i*k < isPrime.length; k++)    // k 表示倍数
-//				{
-//					isPrime[i*k] = false;
-//				}
-//			}
-//		}
-//		for (int i = 2; i < isPrime.length; i++)
-//		{
-//			if ( isPrime[i] )
-//			{
-//				System.out.print(i + " ");
-//			}
-//		}
+		Scanner in = new Scanner(System.in);
+		boolean[] isPrime = new boolean[100];   // 这个意思是观察100以内的数字那些是素数。因为java会对为初始化的数组都赋予0，这不符合我们要给数组中每个数据都是true的规定，所以我们要先做以下操作
+		for (int i = 0; i < isPrime.length; i++)
+		{
+			isPrime[i] = true;
+		}
+		for (int i = 2; i < isPrime.length; i++)
+		{
+			if ( isPrime[i])     // 如果这个数是素数，则做一个遍历,它的2倍3倍4倍都标记为非素数素数
+			{
+				for (int k = 2; i*k < isPrime.length; k++)    // k 表示倍数
+				{
+					isPrime[i*k] = false;
+				}
+			}
+		}
+		for (int i = 2; i < isPrime.length; i++)
+		{
+			if ( isPrime[i] )
+			{
+				System.out.print(i + " ");
+			}
+		}
 		
-		
-		
-		// 5-2.4 二维数组
-		// 以上我们讲的都是一维数组
-	    /* int[][] a = new int[3][5];
-	     * 通常理解为a是一个3行5列的矩阵:
-	     *  a[0][0] | a[0][1] | a[0][2] | a[0][3] | a[0][4]
-	     *  a[1][0] | a[1][1] | a[1][2] | a[1][3] | a[1][4]
-	     *  a[2][0] | a[2][1] | a[2][2] | a[2][3] | a[2][4]
-	     * 	
-	     * 如果我们要遍历一个二维数组，就表示我们要进行一个两层的循环
-	     * for (i = 0; i < 3; i++)
-	     * {
-	     *     for (j = 0; j < 5; j++)
-	     *     {
-	     *         a[i][j] = i*j;
-	     *     }
-	     * }
-	     * @ a[i][j]是一个int
-	     * @ 表示第i行第j列上的单元
-	     *     a[i,j]并不存在
-	     *     
-	     *     
-	     *       二维数组的初始化
-	     *   int[][] a = {
-	     *       {1,2,3,4},
-	     *       {1,2,3},
-	     *   }            // 表示两行四列
-	     * 编译器来数数；
-	     * 每行一个｛｝，逗号分隔
-	     * 最后的逗号可以存在，有古老的传统
-	     * 如果省略，表示补零
-	     * 
-	     */
-		
-		/*        tic-tac-toe游戏      井字棋
-		 *  读入一个3*3的矩阵，矩阵中的数字为1表示该位置上有一个x，
-		 *  为0表示为0
-		 *  程序判断这个矩阵中是否有获胜的一方，输出表示获胜的一方
-		 *  的字符x或者0，或输出无人获胜
-		 * 示例如下
-		 */
-//		Scanner in = new Scanner(System.in);
-//		final int SIZE = 3;
-//		int[][] board = new int[SIZE][SIZE];    // 定义一个矩阵
-//		boolean gotResult = false;         // 需要一个变量来表示是否得到了结果，一开始必然是没有得到
-//		int numOfX = 0;                 // 记录是否有一个数字已经达到3了
-//		int numOfO = 0;               
-//		
-//		// 首先需要读入这个矩阵
-//		for (int i = 0; i < board.length; i++)      // 原先是 i < SIZE, 后改成左边
-//		{
-//			for (int j = 0; j < board[i].length; j++)
-//			{
-//				board[i][j] = in.nextInt();
-//			}
-//		}
-//		
-//		// 检查行
-//		for (int i = 0; i < SIZE; i++)
-//		{
-//			for (int j = 0; j < SIZE; j++)
-//			{
-//				if (board[i][j] == 1)
-//				{
-//					numOfX += 1;
-//				}
-//				else
-//				{
-//					numOfO += 1;
-//				}
-//			}
-//			if (numOfX == SIZE || numOfO == SIZE)
-//			{
-//				gotResult = true;
-//				numOfX = 0;
-//				numOfO = 0;
-//				break;
-//			}
-//		}
-//		
-//		// 检查列
-//		
-//		for (int j = 0; j < SIZE; j++)
-//		{
-//			for (int i = 0; i < SIZE; i++)
-//			{
-//				if (board[i][j] == 1)
-//				{
-//					numOfX += 1;
-//				}
-//				else
-//				{
-//					numOfO += 1;
-//				}
-//			}
-//			if (numOfX == SIZE || numOfO == SIZE)
-//			{
-//				gotResult = true;
-//				numOfO = 0;
-//				numOfX = 0;
-//				break;
-//			}
-//		}
-//		
-//		// 检查对角线
 		
 		
 		

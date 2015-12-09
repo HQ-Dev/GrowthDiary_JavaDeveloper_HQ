@@ -336,70 +336,25 @@ public class Main {
 		 *  的字符x或者0，或输出无人获胜
 		 * 示例如下
 		 */
-//		Scanner in = new Scanner(System.in);
-//		final int SIZE = 3;
-//		int[][] board = new int[SIZE][SIZE];    // 定义一个矩阵
-//		boolean gotResult = false;         // 需要一个变量来表示是否得到了结果，一开始必然是没有得到
-//		int numOfX = 0;                 // 记录是否有一个数字已经达到3了
-//		int numOfO = 0;               
-//		
-//		// 首先需要读入这个矩阵
-//		for (int i = 0; i < board.length; i++)      // 原先是 i < SIZE, 后改成左边
-//		{
-//			for (int j = 0; j < board[i].length; j++)
-//			{
-//				board[i][j] = in.nextInt();
-//			}
-//		}
-//		
-//		// 检查行
-//		for (int i = 0; i < SIZE; i++)
-//		{
-//			for (int j = 0; j < SIZE; j++)
-//			{
-//				if (board[i][j] == 1)
-//				{
-//					numOfX += 1;
-//				}
-//				else
-//				{
-//					numOfO += 1;
-//				}
-//			}
-//			if (numOfX == SIZE || numOfO == SIZE)
-//			{
-//				gotResult = true;
-//				numOfX = 0;
-//				numOfO = 0;
-//				break;
-//			}
-//		}
-//		
-//		// 检查列
-//		
-//		for (int j = 0; j < SIZE; j++)
-//		{
-//			for (int i = 0; i < SIZE; i++)
-//			{
-//				if (board[i][j] == 1)
-//				{
-//					numOfX += 1;
-//				}
-//				else
-//				{
-//					numOfO += 1;
-//				}
-//			}
-//			if (numOfX == SIZE || numOfO == SIZE)
-//			{
-//				gotResult = true;
-//				numOfO = 0;
-//				numOfX = 0;
-//				break;
-//			}
-//		}
-//		
-//		// 检查对角线
+		Scanner in = new Scanner(System.in);
+		final int SIZE = 3;
+		int[][] board = new int[SIZE][SIZE];    // 定义一个矩阵
+		boolean gotResult = false;         // 需要一个变量来表示是否得到了结果，一开始必然是没有得到
+		int numOfX = 0;                 // 记录是否有一个数字已经达到3了
+		int numOfO = 0;               
+		
+		// 首先需要读入这个矩阵
+		for (int i = 0; i < board.length; i++)      // 原先是 i < SIZE, 后改成左边
+		{
+			for (int j = 0; j < board[i].length; j++)
+			{
+				board[i][j] = in.nextInt();
+			}
+		}
+		
+		// 检查行
+		
+		// 检查列
 		
 		
 		

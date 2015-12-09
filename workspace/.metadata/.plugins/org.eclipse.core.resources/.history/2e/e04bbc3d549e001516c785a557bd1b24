@@ -231,175 +231,31 @@ public class Main {
 		// 判断是否能被已经知道的并且<x的素数整除
 		// 假如我们现在需要构造前50个素数的表
 		// 根据我们已经产生出来的素数来判断下一个数到底是不是素数
-//		Scanner in = new Scanner(System.in);
-//		int[] primes = new int[50];    // 定义这个数组变量来存放我们发现的素数，定义50个
-//		primes[0] = 2;           // 首先我们知道2是素数，所以数组第一个就是它
-//		                        // 接下来就是把发现的素数往数组变量中放入
-//		int cnt = 1;         // cnt＝1有两层含义：一层是，现在有一个素数，第二层是，那一个再发现什么，要将它放到primes[cnt=1]当中
-//		MAIN_LOOP:
-//		for ( int x = 3; cnt < 50; x++)  // 因为2是素数，已经放入了，所以从3开始，因为条件是构造前50个素数，所以条件是 cnt < 50
-//		{                                // 这个循环中要做的事就是，将要判断是不是素数的x来分别除以已经存在的素数，如果能被整除，就不是素数，如果不能被整除，就添加到primes[]当中
-//			for (int i = 0; i < cnt; i++)
-//			{
-//				if (x % primes[i] == 0)    // 如果不是素数，就对下一个数进行循环，看下一个数是不是素数
-//				{
-//					continue MAIN_LOOP;
-//				}
-//			}
-//			primes[cnt++] = x;
-//		}                                // 完成后可以得到前50个素数，即得到了一个素数表
-//		//使用 for - each 循环得到所有的前50个素数
-//		for (int k : primes)
-//		{
-//			System.out.print(k + " ");
-//		}
-		
-		// 上面这个方法的效率会提高很多，可是这仍然是一个传统的方法
-		// 我们从计算机的思维来考虑问题
-		/*
-		 *       构造n以内的素数表
-		 * 1.令x为2
-		 * 2.将2x、3x、4x直至ax<n的数标记为非素数
-		 * 3.令x为下一个没有被标记为非素数的数，重复2；直到所有的数都已经尝试完毕
-		 * 这样剩下的数就是素数了（素数乘以2后就不是素数了，将这些数择出来后，剩下的就是素数）
-		 * 
-		 * 用程序的语言来说就是
-		 * 1.创建prime为boolean[n]，初始化其所有元素为true，prime[x]为true表示x是素数
-		 * 2.令x＝2 （然后2的倍数都标记为false）
-		 * 3.如果x是素数，则对于（i=2;x*i<n;i++）令prime[i*x]=false
-		 * 4.令x++，如果x<n，重复3，否则结束
-		 * 示例如下：
-		 */
-//		Scanner in = new Scanner(System.in);
-//		boolean[] isPrime = new boolean[100];   // 这个意思是观察100以内的数字那些是素数。因为java会对为初始化的数组都赋予0，这不符合我们要给数组中每个数据都是true的规定，所以我们要先做以下操作
-//		for (int i = 0; i < isPrime.length; i++)
-//		{
-//			isPrime[i] = true;
-//		}
-//		for (int i = 2; i < isPrime.length; i++)
-//		{
-//			if ( isPrime[i])     // 如果这个数是素数，则做一个遍历,它的2倍3倍4倍都标记为非素数素数
-//			{
-//				for (int k = 2; i*k < isPrime.length; k++)    // k 表示倍数
-//				{
-//					isPrime[i*k] = false;
-//				}
-//			}
-//		}
-//		for (int i = 2; i < isPrime.length; i++)
-//		{
-//			if ( isPrime[i] )
-//			{
-//				System.out.print(i + " ");
-//			}
-//		}
+		Scanner in = new Scanner(System.in);
+		int[] primes = new int[50];    // 定义这个数组变量来存放我们发现的素数，定义50个
+		primes[0] = 2;           // 首先我们知道2是素数，所以数组第一个就是它
+		                        // 接下来就是把发现的素数往数组变量中放入
+		int cnt = 1;         // cnt＝1有两层含义：一层是，现在有一个素数，第二层是，那一个再发现什么，要将它放到primes[cnt=1]当中
+		MAIN_LOOP:
+		for ( int x = 3; cnt < 50; x++)  // 因为2是素数，已经放入了，所以从3开始，因为条件是构造前50个素数，所以条件是 cnt < 50
+		{                                // 这个循环中要做的事就是，将要判断是不是素数的x来分别除以已经存在的素数，如果能被整除，就不是素数，如果不能被整除，就添加到primes[]当中
+			for (int i = 0; i < cnt; i++)
+			{
+				if (x % primes[i] == 0)    // 如果不是素数，就对下一个数进行循环，看下一个数是不是素数
+				{
+					continue MAIN_LOOP;
+				}
+			}
+			primes[cnt++] = x;
+		}                                // 完成后可以得到前50个素数，即得到了一个素数表
+		//使用 for - each 循环得到所有的前50个素数
+		for (int k : primes)
+		{
+			System.out.print(k + " ");
+		}
 		
 		
 		
-		// 5-2.4 二维数组
-		// 以上我们讲的都是一维数组
-	    /* int[][] a = new int[3][5];
-	     * 通常理解为a是一个3行5列的矩阵:
-	     *  a[0][0] | a[0][1] | a[0][2] | a[0][3] | a[0][4]
-	     *  a[1][0] | a[1][1] | a[1][2] | a[1][3] | a[1][4]
-	     *  a[2][0] | a[2][1] | a[2][2] | a[2][3] | a[2][4]
-	     * 	
-	     * 如果我们要遍历一个二维数组，就表示我们要进行一个两层的循环
-	     * for (i = 0; i < 3; i++)
-	     * {
-	     *     for (j = 0; j < 5; j++)
-	     *     {
-	     *         a[i][j] = i*j;
-	     *     }
-	     * }
-	     * @ a[i][j]是一个int
-	     * @ 表示第i行第j列上的单元
-	     *     a[i,j]并不存在
-	     *     
-	     *     
-	     *       二维数组的初始化
-	     *   int[][] a = {
-	     *       {1,2,3,4},
-	     *       {1,2,3},
-	     *   }            // 表示两行四列
-	     * 编译器来数数；
-	     * 每行一个｛｝，逗号分隔
-	     * 最后的逗号可以存在，有古老的传统
-	     * 如果省略，表示补零
-	     * 
-	     */
-		
-		/*        tic-tac-toe游戏      井字棋
-		 *  读入一个3*3的矩阵，矩阵中的数字为1表示该位置上有一个x，
-		 *  为0表示为0
-		 *  程序判断这个矩阵中是否有获胜的一方，输出表示获胜的一方
-		 *  的字符x或者0，或输出无人获胜
-		 * 示例如下
-		 */
-//		Scanner in = new Scanner(System.in);
-//		final int SIZE = 3;
-//		int[][] board = new int[SIZE][SIZE];    // 定义一个矩阵
-//		boolean gotResult = false;         // 需要一个变量来表示是否得到了结果，一开始必然是没有得到
-//		int numOfX = 0;                 // 记录是否有一个数字已经达到3了
-//		int numOfO = 0;               
-//		
-//		// 首先需要读入这个矩阵
-//		for (int i = 0; i < board.length; i++)      // 原先是 i < SIZE, 后改成左边
-//		{
-//			for (int j = 0; j < board[i].length; j++)
-//			{
-//				board[i][j] = in.nextInt();
-//			}
-//		}
-//		
-//		// 检查行
-//		for (int i = 0; i < SIZE; i++)
-//		{
-//			for (int j = 0; j < SIZE; j++)
-//			{
-//				if (board[i][j] == 1)
-//				{
-//					numOfX += 1;
-//				}
-//				else
-//				{
-//					numOfO += 1;
-//				}
-//			}
-//			if (numOfX == SIZE || numOfO == SIZE)
-//			{
-//				gotResult = true;
-//				numOfX = 0;
-//				numOfO = 0;
-//				break;
-//			}
-//		}
-//		
-//		// 检查列
-//		
-//		for (int j = 0; j < SIZE; j++)
-//		{
-//			for (int i = 0; i < SIZE; i++)
-//			{
-//				if (board[i][j] == 1)
-//				{
-//					numOfX += 1;
-//				}
-//				else
-//				{
-//					numOfO += 1;
-//				}
-//			}
-//			if (numOfX == SIZE || numOfO == SIZE)
-//			{
-//				gotResult = true;
-//				numOfO = 0;
-//				numOfX = 0;
-//				break;
-//			}
-//		}
-//		
-//		// 检查对角线
 		
 		
 		

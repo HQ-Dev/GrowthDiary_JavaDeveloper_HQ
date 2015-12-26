@@ -1,0 +1,21 @@
+
+public class DVD extends Item {
+	private String director;
+	
+	public DVD(String director, int playingTime) {
+		super(director, director, playingTime);
+		this.director = director;
+	}
+
+	public void print() {
+		System.out.println("DVD:" + "title: " + title + " director: " + director
+				+ " comment: " + comment + " playingTime: " + playingTime);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+
+}

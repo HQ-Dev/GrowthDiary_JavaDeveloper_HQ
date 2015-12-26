@@ -1,0 +1,29 @@
+
+public class DVD {
+
+	private String title;
+	private String director;
+	private String comment;
+	private int playingTime;
+	private boolean gotIt = false;
+	
+	public DVD(String title, String director, String comment, int playingTime) {
+		super();
+		this.title = title;
+		this.director = director;
+		this.comment = comment;
+		this.playingTime = playingTime;
+	}
+
+	public void print() {
+		System.out.println("DVD:" + "title: " + title + " director: " + director
+				+ " comment: " + comment + " playingTime: " + playingTime);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+
+}

@@ -203,7 +203,7 @@ public class Main {
 		System.out.println(Math.random());   // 0到1之间的数
 		System.out.println(Math.pow(2, 3));  // 计算2的3次方
 		
-		
+		System.out.println(Character.);
 		
 		
 		//

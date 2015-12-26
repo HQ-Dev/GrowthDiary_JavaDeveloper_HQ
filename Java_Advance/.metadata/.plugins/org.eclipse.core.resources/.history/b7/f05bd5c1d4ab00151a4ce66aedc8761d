@@ -1,0 +1,21 @@
+
+public class Item {
+
+	private String title;
+	private String comment;
+	private int playingTime;
+	private boolean gotIt = false;
+	
+	public Item(String title, String comment, int playingTime) {
+		super();
+		this.title = title;
+		this.comment = comment;
+		this.playingTime = playingTime;
+	}
+
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

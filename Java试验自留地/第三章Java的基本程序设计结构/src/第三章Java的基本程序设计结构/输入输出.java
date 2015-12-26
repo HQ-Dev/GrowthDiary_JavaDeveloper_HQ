@@ -1,0 +1,44 @@
+package 第三章Java的基本程序设计结构;
+
+import java.io.Console;
+import java.nio.file.Paths;
+import java.sql.Date;
+import java.util.Scanner;
+
+public class 输入输出 {
+	
+	public static void main(String[] args) {
+//		Scanner in = new Scanner(System.in);
+//		double dNum = in.nextDouble();
+//		System.out.println(dNum);
+		
+		// 3-2 输出：Hello, Cay. Next year, you'll  be 52.
+		Scanner in = new Scanner(System.in);
+//		
+//		// get first input
+		System.out.print("What is your name?");
+		String name = in.next();
+//		
+//		// get second input
+		System.out.print("How old are you?");
+		int age = in.nextInt();
+//		// display output in the console
+		System.out.println("Hello, " + name + "."+" Next year, you'll be "+(age+1)+".");
+		
+		Console cons = System.console();
+		String username = cons.readLine("username: ");  // Exception in thread "main"
+		char[] passwd = cons.readPassword("password: ");// java.lang.NullPointerException
+	
+        double xiaoshu = 1000.0/3;
+        System.out.printf("%7.2f", xiaoshu);  // 会在开头打印一个空格
+        
+//        Scanner in = new Scanner(System.in);
+        String xiaoming = in.nextLine();
+        int hLong = in.nextInt();
+        String sFormat = String.format("Hi, %s, where old are you , %d ?", xiaoming, hLong);
+        System.out.println(sFormat);
+//        Scanner in = new Scanner(Paths.get("myfile.txt"))
+        
+	}
+
+}

@@ -1,0 +1,14 @@
+package 第三章Java的基本程序设计结构;
+
+import java.util.Scanner;
+
+public class 输入输出 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		double dNum = in.nextDouble();
+		System.out.println(dNum);
+		
+	}
+
+}

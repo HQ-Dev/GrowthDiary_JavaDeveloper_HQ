@@ -1,0 +1,14 @@
+package 第三章Java的基本程序设计结构;
+/**
+ * This program demonstrates a <code>while</code> loop.
+ */
+public class retirement {
+
+	public static void main(String[] args) {
+
+		// while 计算需要多长时间能够存储一定数量的退休金，假定每年存入相同数量的金额
+		// 而且利率是固定。
+		
+	}
+
+}

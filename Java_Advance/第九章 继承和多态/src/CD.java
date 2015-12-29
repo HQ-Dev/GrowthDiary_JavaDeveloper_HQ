@@ -1,5 +1,4 @@
 
-
 public class CD extends Item{
 	private String artist;
 	private int numOfTracks;
@@ -10,6 +9,7 @@ public class CD extends Item{
 		this.numOfTracks = numOfTracks;
 	}
 	
+
 	public void print() {
 		System.out.print("CD:  ");
 		super.print();

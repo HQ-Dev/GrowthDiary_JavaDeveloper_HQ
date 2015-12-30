@@ -51,7 +51,7 @@ public class Game {
 
     private void goRoom(String direction) 
     {
-//        Room nextRoom = null;
+        Room nextRoom = null;
 //        if (direction.equals("north")) {               //注销之后，同样是在room类中创建方法调用，降低耦合，提高代码质量
 //            nextRoom = currentRoom.northExit;
 //        }
@@ -64,7 +64,7 @@ public class Game {
 //        if (direction.equals("west")) {
 //            nextRoom = currentRoom.westExit;
 //        }
-    	Room nextRoom = currentRoom.getToTheExit(direction);
+
         if (nextRoom == null) {
             System.out.println("那里没有门！");
         }

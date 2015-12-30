@@ -51,20 +51,20 @@ public class Game {
 
     private void goRoom(String direction) 
     {
-//        Room nextRoom = null;
-//        if (direction.equals("north")) {               //注销之后，同样是在room类中创建方法调用，降低耦合，提高代码质量
-//            nextRoom = currentRoom.northExit;
-//        }
-//        if (direction.equals("east")) {
-//            nextRoom = currentRoom.eastExit;
-//        }
-//        if (direction.equals("south")) {
-//            nextRoom = currentRoom.southExit;
-//        }
-//        if (direction.equals("west")) {
-//            nextRoom = currentRoom.westExit;
-//        }
-    	Room nextRoom = currentRoom.getToTheExit(direction);
+        Room nextRoom = null;
+        if (direction.equals("north")) {
+            nextRoom = currentRoom.northExit;
+        }
+        if (direction.equals("east")) {
+            nextRoom = currentRoom.eastExit;
+        }
+        if (direction.equals("south")) {
+            nextRoom = currentRoom.southExit;
+        }
+        if (direction.equals("west")) {
+            nextRoom = currentRoom.westExit;
+        }
+
         if (nextRoom == null) {
             System.out.println("那里没有门！");
         }
@@ -77,15 +77,14 @@ public class Game {
     public void showPrompt() {                        // 通过创建了一个函数方法减少了重复的代码
     	System.out.println("你在" + currentRoom);
         System.out.print("出口有: ");
-//        if(currentRoom.northExit != null)
-//            System.out.print("north ");
-//        if(currentRoom.eastExit != null)
-//            System.out.print("east ");
-//        if(currentRoom.southExit != null)
-//            System.out.print("south ");
-//        if(currentRoom.westExit != null)
-//            System.out.print("west ");
-    	System.out.println(currentRoom.getExitDesc());
+        if(currentRoom.northExit != null)
+            System.out.print("north ");
+        if(currentRoom.eastExit != null)
+            System.out.print("east ");
+        if(currentRoom.southExit != null)
+            System.out.print("south ");
+        if(currentRoom.westExit != null)
+            System.out.print("west ");
         System.out.println();
     }
     

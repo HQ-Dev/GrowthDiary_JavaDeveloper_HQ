@@ -39,20 +39,6 @@ public class Room {
     		sb.append("west");
     	return sb.toString();
     }
-    
-    public Room getToTheExit(String direction)
-    {
-    	Room nextRoom = null;
-    	if (direction.equals("north"))
-    		nextRoom = northExit;
-    	if (direction.equals("east"))
-    		nextRoom = eastExit;
-    	if (direction.equals("south"))
-    		nextRoom = southExit;
-    	if (direction.equals("west"))
-    		nextRoom = westExit;
-    	return nextRoom;
-    }
 
     @Override
     public String toString()
